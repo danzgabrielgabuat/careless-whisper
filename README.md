@@ -1,45 +1,72 @@
 # Careless Whisper 🎙️
 
-A desktop audio transcription app built with Python and Tkinter, powered by 
-OpenAI Whisper for transcription and Ollama/Qwen for AI-assisted cleanup.
+A desktop audio transcription app powered by OpenAI Whisper and Ollama/Qwen,
+built as a personal automation initiative during my internship at SERDAC-Luzon.
 
-Built during my internship at DOST-CLSU to solve a real problem — staff 
-had to manually transcribe recorded interviews, which took hours. This app 
-automates the process.
+## Background
 
-## Features
-- Transcribe audio files (MP3, WAV, M4A, MP4, OGG, FLAC, WEBM)
-- Multiple Whisper model sizes (tiny, base, small, medium, large-v2)
-- Auto-detect language or set manually
-- Live transcript display with timestamps
-- AI-powered cleanup via Ollama/Qwen 2.5:3b
-- Glossary support for domain-specific terms
-- Auto-saves transcript to .txt file
+During my internship at the **Socio-Economic Research and Data Analytics Center 
+(SERDAC-Luzon)** — based inside Central Luzon State University (CLSU) — one of 
+my recurring responsibilities was transcribing confidential interviews involving 
+mentors and grantees under the **Youth Innovation Program (YIP)**. Recordings 
+were often lengthy, and manual transcription required repeatedly listening to 
+audio and typing every spoken word. After several days of doing this, it became 
+clear the process consumed a significant amount of time and mental effort.
+
+This was not an assigned project. It was a personal automation initiative I 
+started after asking myself: *"Can this be automated?"*
+
+I began conceptualizing the idea during my third week of internship, then 
+continued developing and testing it during Week 5 when most assigned 
+responsibilities had already been completed.
+
+## What it does
+
+- Transcribes audio files locally using OpenAI Whisper — no internet required
+- Supports **58 languages** including Filipino/Tagalog with auto-detection
+- Live transcript display with timestamps as transcription progresses
+- AI-powered cleanup via **Ollama + Qwen 2.5:3b** to fix misheard words,
+  correct punctuation, and improve readability
+- Glossary input for domain-specific terms, acronyms, and proper nouns
+  that Whisper might mishear
+- Auto-saves transcript to `.txt` file
+- Designed for non-technical users — no command line required
+
+## Supported formats
+
+MP3, WAV, M4A, MP4, OGG, FLAC, WEBM
+
+## Models
+
+| Model | Speed | Accuracy | RAM Required |
+|-------|-------|----------|--------------|
+| tiny | Fastest | Basic | ~1 GB |
+| base | Fast | Good | ~1 GB |
+| small | Moderate | Better | ~2 GB |
+| medium | Slow | Very good | ~5 GB |
+| large-v2 | Slowest | Best | ~10 GB |
 
 ## Requirements
+
 - Python 3.8+
-- OpenAI Whisper
-- Ollama (for AI cleanup) with qwen2.5:3b pulled
+- ffmpeg
 
 ## Installation
+
 ```bash
-pip install openai-whisper tkinter
+pip install openai-whisper
 ```
 
-For AI cleanup, install Ollama from ollama.com then:
+For AI cleanup (optional), install Ollama from [ollama.com](https://ollama.com) then:
+
 ```bash
 ollama pull qwen2.5:3b
 ```
 
 ## Usage
+
 ```bash
 python desktop/careless_whisper.py
 ```
 
-## Built With
-- [OpenAI Whisper](https://github.com/openai/whisper)
-- [Ollama](https://ollama.com)
-- Python Tkinter
-
-## Author
-Danz Gabriel S. Gabuat — BS Mathematics, Computer Applications
+## Project structure
