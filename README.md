@@ -70,3 +70,24 @@ python desktop/careless_whisper.py
 ```
 
 ## Project structure
+
+```
+careless-whisper/
+├── desktop/
+│   └── careless_whisper.py    # Tkinter desktop version (current)
+└── README.md
+```
+
+> A Streamlit web version is currently in development.
+
+## Tech stack
+
+- [OpenAI Whisper](https://github.com/openai/whisper) — speech recognition
+- [Ollama](https://ollama.com) + Qwen 2.5:3b — local AI cleanup
+- Python Tkinter — desktop GUI
+
+## Author
+
+**Danz Gabriel S. Gabuat**  
+BS Mathematics with Specialization in Computer Applications
+Central Luzon State University  
